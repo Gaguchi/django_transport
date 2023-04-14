@@ -1,0 +1,18 @@
+{% extends "users/layout.html" %}
+{% block body %}
+
+<h1>Welcome, {{request.user.first_name}}!</h1>
+
+<ul>
+    <li>Username: {{request.user.username}}</li>
+    <li>Email: {{request.user.email}}</li>
+    {% for parcel in my_parcels %}
+      <li>{{ parcel.tracking_number }}</li>
+    {% empty %}
+      <li>You have no parcels assigned to you.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'logout' %}">Log Out</a>
+{% endblock body %}
+

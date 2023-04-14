@@ -1,0 +1,23 @@
+{% extends 'parcels/base.html' %}
+
+{% block content %}
+  <form method="GET">
+    <label for="destination">Destination:</label>
+    <select name="destination" id="destination">
+      <option value="Poland"{% if destination == 'Poland' %} selected{% endif %}>Poland</option>
+      <option value="Georgia"{% if destination == 'Georgia' %} selected{% endif %}>Georgia</option>
+    </select>
+    <button type="submit">Filter</button>
+  </form>
+
+  {% if rides %}
+    <h2>Rides</h2>
+    <ul>
+      {% for ride in rides %}
+        <li>{{ ride.name }} - {{ ride.start_date }} to {{ ride.end_date }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No rides available.</p>
+  {% endif %}
+{% endblock %}
