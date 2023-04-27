@@ -10,13 +10,14 @@ $(function() {
       }
     };
   
-    var currentTheme = 'light';
-    var themeSwitcher = $('#theme-switcher-btn');
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    $('body').css(themes[currentTheme]);
+    $('#themeSwitch').prop('checked', currentTheme === 'dark');
   
-    themeSwitcher.click(function() {
-      var newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    $('#themeSwitch').change(function() {
+      var newTheme = this.checked ? 'dark' : 'light';
       $('body').css(themes[newTheme]);
-      currentTheme = newTheme;
+      localStorage.setItem('theme', newTheme);
     });
   });
   
