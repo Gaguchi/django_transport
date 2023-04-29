@@ -1,23 +1,16 @@
 $(function() {
-    var themes = {
-      light: {
-        'background-color': '#ffffff',
-        'color': '#000000'
-      },
-      dark: {
-        'background-color': '#343a40',
-        'color': '#ffffff'
-      }
-    };
-  
-    var currentTheme = localStorage.getItem('theme') || 'light';
-    $('body').css(themes[currentTheme]);
-    $('#themeSwitch').prop('checked', currentTheme === 'dark');
-  
-    $('#themeSwitch').change(function() {
-      var newTheme = this.checked ? 'dark' : 'light';
-      $('body').css(themes[newTheme]);
-      localStorage.setItem('theme', newTheme);
-    });
+  var themes = {
+    light: '/static/parcels/css/light.css',
+    dark: '/static/parcels/css/dark.css'
+  };
+
+  var currentTheme = localStorage.getItem('theme') || 'light';
+  $('link#theme-style').attr('href', themes[currentTheme]);
+  $('#themeSwitch').prop('checked', currentTheme === 'dark');
+
+  $('#themeSwitch').change(function() {
+    var newTheme = this.checked ? 'dark' : 'light';
+    $('link#theme-style').attr('href', themes[newTheme]);
+    localStorage.setItem('theme', newTheme);
   });
-  
+});

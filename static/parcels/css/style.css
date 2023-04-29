@@ -14,5 +14,5 @@ button {
   }
   
   button.active {
-    background-color: yellow;
+    background-color: steelblue;
   }

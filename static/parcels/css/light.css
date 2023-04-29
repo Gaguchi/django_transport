@@ -1,0 +1,71 @@
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .active {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #f8f9fa;
+  }
+  
+  button {
+    background-color: #e9ecef;
+    color: #212529;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: steelblue;
+  }
+  
+  .accordion-button {
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+  }
+  
+  .accordion-button:hover {
+    background-color: #dee2e6;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+    color: #212529;
+    border: 1px solid #e9ecef;
+  }
+  
+  .accordion-button:not(.collapsed):hover {
+    background-color: #dee2e6;
+  }
+  
+  .accordion-body {
+    background-color: #fff;
+    border: 1px solid #f8f9fa;
+    border-top: none;
+  }
+  
+  .form-check-label {
+    color: #212529;
+  }
+  
+  .form-switch input.form-check-input:checked {
+    background-color: #0d6efd;
+  }
+  
+  .form-switch input.form-check-input:checked + .form-check-label {
+    color: #fff;
+  }
+
+ .form-switch .form-check-input {
+    background-image: url("/static/parcels/sun.svg") !important;
+} 
+  
